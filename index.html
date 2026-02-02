@@ -2,233 +2,235 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>S.A.W. CONSTRUCTION CONTRACTING, LLC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S.A.W. Construction Contracting, LLC</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --dark: #1f2933;
-      --gray: #6b7280;
-      --light: #f3f4f6;
-      --accent: #9ca3af;
+      --blue: #1f3a5f;
+      --light-blue: #2e5c8a;
+      --off-white: #f5f7fa;
+      --text-dark: #1a1a1a;
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: var(--dark);
-      background: #ffffff;
-      line-height: 1.6;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 40px;
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    header img {
-      height: 40px;
-    }
-
-    nav a {
-      margin-left: 24px;
-      text-decoration: none;
-      color: var(--gray);
-      letter-spacing: 0.15em;
-      font-size: 0.8rem;
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      background: linear-gradient(180deg, var(--blue) 0%, var(--off-white) 70%);
     }
 
     /* HERO */
     .hero {
-      position: relative;
-      height: 75vh;
-      background-size: cover;
-      background-position: center;
-      animation: heroFade 18s infinite;
+      min-height: 90vh;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
+      align-items: center;
       text-align: center;
+      color: white;
+      padding: 2rem;
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.45);
-    }
-
-    .hero-content {
-      position: relative;
-      color: #fff;
-      max-width: 900px;
-      padding: 20px;
+    .hero img {
+      max-width: 180px;
+      margin-bottom: 2rem;
     }
 
     .hero h1 {
+      font-family: 'Playfair Display', serif;
       font-size: 3rem;
-      letter-spacing: 0.3em;
-      margin-bottom: 20px;
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
     }
 
     .hero p {
-      color: #e5e7eb;
+      max-width: 700px;
       font-size: 1.1rem;
-      margin-bottom: 30px;
+      opacity: 0.9;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 14px 26px;
-      background: var(--accent);
-      color: #111;
-      text-decoration: none;
-      margin: 6px;
-      border-radius: 6px;
-      font-weight: 600;
-      transition: background 0.3s, transform 0.2s;
-    }
-
-    .btn:hover {
-      background: #d1d5db;
-      transform: translateY(-2px);
-    }
-
-    @keyframes heroFade {
-      0% { background-image: url("images/custom-home-exterior.jpg"); }
-      33% { background-image: url("images/fronthome.jpg"); }
-      66% { background-image: url("images/modern-exterior-rear.jpg"); }
-      100% { background-image: url("images/custom-home-exterior.jpg"); }
-    }
-
+    /* SECTION BASE */
     section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 80px 20px;
+      padding: 4rem 6%;
+      background: var(--off-white);
     }
 
-    section h2 {
-      text-align: center;
-      font-size: 2rem;
-      letter-spacing: 0.25em;
-      margin-bottom: 30px;
+    section.dark {
+      background: linear-gradient(180deg, #e9eef5, #ffffff);
     }
 
-    section p {
-      max-width: 800px;
-      margin: 0 auto 20px;
+    h2 {
+      font-family: 'Playfair Display', serif;
       text-align: center;
-      color: var(--gray);
+      font-size: 2.2rem;
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.1em;
+      color: var(--blue);
     }
 
     /* GALLERY */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      margin-top: 50px;
+      gap: 2rem;
     }
 
     .gallery img {
       width: 100%;
-      border-radius: 10px;
-      border: 2px solid #e5e7eb;
-      transition: transform 0.3s, border 0.3s;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .gallery img:hover {
-      transform: scale(1.03);
-      border-color: var(--accent);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+    }
+
+    /* ABOUT */
+    .about {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    /* CONTACT */
+    .contact {
+      text-align: center;
+      padding: 5rem 6%;
+      background: var(--light-blue);
+      color: white;
+    }
+
+    .contact button {
+      margin-top: 2rem;
+      padding: 0.9rem 2.2rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: white;
+      color: var(--blue);
+      font-weight: 600;
     }
 
     footer {
-      background: var(--light);
       text-align: center;
-      padding: 30px 20px;
+      padding: 1.5rem;
+      background: #0f243d;
+      color: #cfd8e3;
       font-size: 0.9rem;
-      color: var(--gray);
     }
   </style>
 </head>
-
 <body>
 
-<header>
-  <img src="images/companylogo.jpg" alt="S.A.W. Construction Logo">
-  <nav>
-    <a href="#about">ABOUT</a>
-    <a href="#projects">PROJECTS</a>
-    <a href="#contact">CONTACT</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <div class="hero-content">
+  <!-- HERO -->
+  <div class="hero">
+    <img src="images/companylogo.jpg" alt="S.A.W. Construction Logo">
     <h1>BUILDING WITH INTEGRITY</h1>
     <p>
-      Custom homes, remodeling, and craftsmanship built to last — proudly serving since 1996.
+      Custom homes, additions, garages and barns, decks, and full-scale remodeling —
+      proudly family-owned and operated since 1996.
     </p>
-    <a class="btn" href="mailto:info@sawconstruction.com?subject=New Project Inquiry">
-      Start Your Project
-    </a>
-    <a class="btn" href="mailto:info@sawconstruction.com">
-      Email Us
-    </a>
   </div>
-</section>
 
-<section id="about">
-  <h2>ABOUT</h2>
-  <p>
-    S.A.W. Construction Contracting, LLC specializes in custom homes, additions,
-    garages and barns, decks, and full-scale remodeling projects.
-  </p>
-  <p>
-    Family owned and operated since 1996, we pride ourselves on honest work,
-    durable materials, and attention to detail from concept to completion.
-  </p>
-</section>
+  <!-- ABOUT -->
+  <section class="dark">
+    <h2>ABOUT</h2>
+    <div class="about">
+      <p>
+        <strong>S.A.W. Construction Contracting, LLC</strong> specializes in new construction,
+        remodeling, kitchens, bathrooms, decks, garages, and barns.
+      </p>
+      <p>
+        Family owned and operated since 1996, we are committed to honest workmanship,
+        durable materials, and attention to detail from concept to completion.
+      </p>
+    </div>
+  </section>
 
-<section id="projects">
-  <h2>FEATURED PROJECTS</h2>
+  <!-- NEW BUILDS -->
+  <section>
+    <h2>NEW BUILDS</h2>
+    <div class="gallery">
+      <img src="images/custom-home-exterior.jpg">
+      <img src="images/custom-home-exterior2.jpg">
+      <img src="images/frontdhome.jpg">
+    </div>
+  </section>
 
-  <div class="gallery">
-    <img src="images/custom-home-exterior.jpg" alt="Custom Home Exterior">
-    <img src="images/custom-home-exterior2.jpg" alt="Custom Home Detail">
-    <img src="images/custom-home-exterior3.jpg" alt="Custom Home Angle">
-    <img src="images/custom-home-exterior4.jpg" alt="Porch Exterior">
-    <img src="images/custom-home-exterior5.jpg" alt="Exterior Finish">
-    <img src="images/fronthome.jpg" alt="Front Home">
-    <img src="images/deck.jpg" alt="Deck Build">
-    <img src="images/deck2.jpg" alt="Deck Project">
-    <img src="images/deck3.jpg" alt="Deck Detail">
-    <img src="images/fireplace.jpg" alt="Fireplace Build">
-    <img src="images/crane.jpg" alt="Construction Crane">
-    <img src="images/modern-exterior-rear.jpg" alt="Modern Rear Exterior">
+  <!-- REMODELS -->
+  <section class="dark">
+    <h2>REMODELS</h2>
+    <div class="gallery">
+      <img src="images/gallery.jpg">
+      <img src="images/gallery-jpg">
+      <img src="images/modern-exterior-rear.jpg">
+    </div>
+  </section>
+
+  <!-- KITCHENS -->
+  <section>
+    <h2>KITCHENS</h2>
+    <div class="gallery">
+      <img src="images/kitchen.jpg">
+    </div>
+  </section>
+
+  <!-- BATHROOMS -->
+  <section class="dark">
+    <h2>BATHROOMS</h2>
+    <div class="gallery">
+      <img src="images/bathroom.jpg">
+      <img src="images/bathroom2.jpg">
+    </div>
+  </section>
+
+  <!-- DECKS -->
+  <section>
+    <h2>DECKS</h2>
+    <div class="gallery">
+      <img src="images/deck.jpg">
+      <img src="images/deck2.jpg">
+      <img src="images/deck3.jpg">
+    </div>
+  </section>
+
+  <!-- GARAGES & BARNS -->
+  <section class="dark">
+    <h2>GARAGES & BARNS</h2>
+    <div class="gallery">
+      <img src="images/crane.jpg">
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <div class="contact">
+    <h2>CONTACT</h2>
+    <p>Ready to get started? Let’s talk about your project.</p>
+    <button onclick="location.href='mailto:youremail@example.com'">Request a Quote</button>
   </div>
-</section>
 
-<section id="contact">
-  <h2>CONTACT</h2>
-  <p>
-    Ready to get started or have questions? Let’s talk about your project.
-  </p>
-  <a class="btn" href="mailto:info@sawconstruction.com?subject=Project Quote Request">
-    Request a Quote
-  </a>
-</section>
-
-<footer>
-  © 1996–2026 S.A.W. CONSTRUCTION CONTRACTING, LLC
-</footer>
+  <footer>
+    © 1996–2026 S.A.W. Construction Contracting, LLC
+  </footer>
 
 </body>
 </html>
