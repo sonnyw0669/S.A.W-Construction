@@ -5,8 +5,132 @@
   <title>SAW Construction | Custom Homes & Remodeling</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Main Styles -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Modern system font stack -->
+  <style>
+    :root {
+      --dark: #1f2933;
+      --gray: #6b7280;
+      --light: #f9fafb;
+      --accent: #2563eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                   "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+      background: #ffffff;
+    }
+
+    header {
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    header h1 {
+      font-size: 1.4rem;
+      margin: 0;
+      letter-spacing: 0.5px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: var(--gray);
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--dark);
+    }
+
+    .hero {
+      padding: 80px 20px;
+      text-align: center;
+      background: var(--light);
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--gray);
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      margin: 5px;
+    }
+
+    .btn.secondary {
+      background: #111827;
+    }
+
+    section {
+      padding: 70px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    section p {
+      max-width: 800px;
+      margin: 0 auto 20px;
+      color: var(--gray);
+      text-align: center;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .contact {
+      background: var(--light);
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    footer {
+      padding: 30px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--gray);
+      border-top: 1px solid #e5e7eb;
+    }
+  </style>
 </head>
 <body>
 
@@ -23,20 +147,30 @@
   <!-- Hero -->
   <section class="hero">
     <h2>Building Homes With Integrity</h2>
-    <p>Custom Homes • Remodeling • High-Performance Construction</p>
-    <a href="#contact" class="cta">Start Your Project</a>
+    <p>
+      Custom homes, remodeling, and high-performance construction built
+      with precision, durability, and pride.
+    </p>
+
+    <a class="btn" href="mailto:info@sawconstruction.com?subject=New Project Inquiry">
+      Start Your Project
+    </a>
+
+    <a class="btn secondary" href="mailto:info@sawconstruction.com">
+      Email Us
+    </a>
   </section>
 
   <!-- About -->
   <section id="about">
     <h2>About SAW Construction</h2>
     <p>
-      SAW Construction specializes in custom homes, remodeling, and high-quality craftsmanship.
-      We focus on durability, energy efficiency, and designs that stand the test of time.
+      SAW Construction specializes in custom homes and remodeling with a focus
+      on craftsmanship, energy efficiency, and designs that stand the test of time.
     </p>
     <p>
-      From concept to completion, we work closely with our clients to ensure every detail
-      is executed with precision and care.
+      From concept to completion, we work closely with our clients to ensure every
+      detail is executed with precision and care.
     </p>
   </section>
 
@@ -44,28 +178,31 @@
   <section id="projects">
     <h2>Featured Projects</h2>
 
-    <div class="projects">
-      <figure>
-        <img src="images/custom-home-exterior.jpg" alt="Custom Home Exterior">
-        <figcaption>Custom Home Exterior</figcaption>
-      </figure>
-
-      <figure>
-        <img src="images/modern-exterior-rear.jpg" alt="Modern Exterior Rear">
-        <figcaption>Modern Exterior Rear</figcaption>
-      </figure>
+    <div class="gallery">
+      <img src="images/custom-home-exterior.jpg" alt="Custom Home Exterior">
+      <img src="images/custom-home-exterior2.jpg" alt="Custom Home Exterior Detail">
+      <img src="images/custom-home-exterior3.jpg" alt="Home Exterior Angle">
+      <img src="images/custom-home-exterior4.jpg" alt="Home Exterior Porch">
+      <img src="images/custom-home-exterior5.jpg" alt="Exterior Finish Detail">
+      <img src="images/modern-exterior-rear.jpg" alt="Modern Exterior Rear View">
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact">
+  <section id="contact" class="contact">
     <h2>Let’s Build Something Great</h2>
-    <p>Email: <strong>info@sawconstruction.com</strong></p>
+    <p>
+      Ready to get started or have questions? Reach out and let’s talk about your project.
+    </p>
+
+    <a class="btn" href="mailto:info@sawconstruction.com?subject=Project Quote Request">
+      Request a Quote
+    </a>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2026 SAW Construction</p>
+    © 2026 SAW Construction
   </footer>
 
 </body>
