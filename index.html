@@ -1,176 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>S.A.W. Construction Contracting, LLC</title>
 
 <!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --blue:#1f3a5f;
-  --blue-soft:#2e5c8a;
-  --light:#f4f7fb;
-  --dark:#111827;
+:root {
+  --brand-blue: #1e4f8f; /* strong logo-style blue */
+  --brand-blue-dark: #143a6b;
+  --white: #ffffff;
+  --off-white: #f4f7fb;
+  --text-dark: #1b1b1b;
 }
 
-*{box-sizing:border-box;margin:0;padding:0;}
-
-body{
-  font-family:'Inter',sans-serif;
-  color:var(--dark);
-  background:var(--light);
-  overflow-x:hidden;
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* ================= HERO ================= */
-.hero{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:3rem 1.5rem;
-  color:white;
-  background:
-    linear-gradient(rgba(31,58,95,.75),rgba(31,58,95,.85)),
-    url("images/custom-home-exterior.jpg") center/cover fixed;
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--off-white);
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
-.hero img{
-  width:180px;
-  margin-bottom:2rem;
+/* HERO */
+.hero {
+  background: linear-gradient(
+    rgba(30,79,143,0.9),
+    rgba(30,79,143,0.85)
+  );
+  color: white;
+  padding: 3.5rem 1.5rem 3rem;
+  text-align: center;
 }
 
-.hero h1{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(2.4rem,4vw,3.2rem);
-  letter-spacing:.18em;
+.hero img {
+  width: 160px;
+  margin-bottom: 1.5rem;
 }
 
-.hero p{
-  max-width:720px;
-  margin-top:1.2rem;
-  font-size:1.1rem;
-  opacity:.95;
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  letter-spacing: 0.15em;
 }
 
-/* ================= SECTIONS ================= */
-section{
-  padding:5rem 6%;
-  position:relative;
+.hero p {
+  max-width: 720px;
+  margin: 1.2rem auto 0;
+  font-size: 1.05rem;
+  opacity: 0.95;
 }
 
-@media(max-width:768px){
-  section{padding:4rem 6%;}
+/* SECTION */
+section {
+  padding: 4rem 6%;
 }
 
-h2{
-  font-family:'Playfair Display',serif;
-  text-align:center;
-  font-size:2.2rem;
-  letter-spacing:.12em;
-  color:var(--blue);
-  margin-bottom:3rem;
+section.alt {
+  background: white;
 }
 
-/* divider */
-.section-divider{
-  height:70px;
-  background:linear-gradient(180deg,var(--light),#e6ecf5);
+.section-title {
+  text-align: center;
+  font-size: 1.9rem;
+  letter-spacing: 0.18em;
+  margin-bottom: 3rem;
+  color: var(--brand-blue-dark);
 }
 
-/* ================= ABOUT ================= */
-.about{
-  max-width:900px;
-  margin:auto;
-  text-align:center;
-  line-height:1.8;
-  font-size:1.05rem;
+/* GALLERY GRID */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
 }
 
-/* ================= GALLERY ================= */
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:2.2rem;
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 
-/* image card */
-.card{
-  position:relative;
-  overflow:hidden;
-  border-radius:14px;
-  box-shadow:0 10px 30px rgba(0,0,0,.15);
+.card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
-.card img{
-  width:100%;
-  height:260px;
-  object-fit:cover;
-  transition:transform .6s ease;
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0),
+    rgba(0,0,0,0.35)
+  );
 }
 
-.card::after{
-  content:attr(data-label);
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(to top,rgba(0,0,0,.65),rgba(0,0,0,.15));
-  color:white;
-  font-family:'Playfair Display',serif;
-  font-size:1.4rem;
-  letter-spacing:.08em;
-  opacity:0;
-  transition:.4s;
+.card:hover img {
+  transform: scale(1.05);
 }
 
-.card:hover img{transform:scale(1.08);}
-.card:hover::after{opacity:1;}
-
-/* ================= CONTACT ================= */
-.contact{
-  background:linear-gradient(135deg,var(--blue),var(--blue-soft));
-  color:white;
-  text-align:center;
-  padding:5rem 6%;
+/* ABOUT */
+.about {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  font-size: 1.05rem;
 }
 
-.contact button{
-  margin-top:2rem;
-  padding:.9rem 2.4rem;
-  font-size:1rem;
-  font-weight:600;
-  border:none;
-  border-radius:6px;
-  background:white;
-  color:var(--blue);
-  cursor:pointer;
+/* CONTACT */
+.contact {
+  background: var(--brand-blue);
+  color: white;
+  text-align: center;
+  padding: 4.5rem 1.5rem;
 }
 
-/* ================= FOOTER ================= */
-footer{
-  background:#0f243d;
-  color:#cfd8e3;
-  text-align:center;
-  padding:1.5rem;
-  font-size:.9rem;
+.contact h2 {
+  letter-spacing: 0.18em;
+  margin-bottom: 1rem;
 }
 
-/* ================= REVEAL ================= */
-.reveal{
-  opacity:0;
-  transform:translateY(40px);
-  transition:.8s ease;
+.contact p {
+  opacity: 0.95;
 }
-.reveal.active{
-  opacity:1;
-  transform:none;
+
+.contact button {
+  margin-top: 2rem;
+  padding: 0.9rem 2.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  background: white;
+  color: var(--brand-blue-dark);
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  background: var(--brand-blue-dark);
+  color: #cfd8e3;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  section {
+    padding: 3rem 1.5rem;
+  }
 }
 </style>
 </head>
@@ -178,109 +176,82 @@ footer{
 <body>
 
 <!-- HERO -->
-<div class="hero">
+<header class="hero">
   <img src="images/companylogo.jpg" alt="S.A.W. Construction Logo">
   <h1>BUILDING WITH INTEGRITY</h1>
   <p>
-    Custom homes, remodels, decks, garages, and barns —
-    family-owned craftsmanship built to last.
+    Custom homes, remodeling, decks, garages, and barns — proudly family-owned and operated since 1996.
   </p>
-</div>
-
-<div class="section-divider"></div>
+</header>
 
 <!-- ABOUT -->
-<section class="reveal">
-  <h2>ABOUT</h2>
+<section class="alt">
+  <h2 class="section-title">ABOUT</h2>
   <div class="about">
     <p>
-      <strong>S.A.W. Construction Contracting, LLC</strong> provides high-quality
-      new construction, remodeling, kitchens, bathrooms, decks, garages, and barns.
+      <strong>S.A.W. Construction Contracting, LLC</strong> specializes in new construction,
+      remodeling, kitchens, bathrooms, decks, garages, and barns.
     </p>
     <p>
-      Family owned and operated since 1996, we focus on honest workmanship,
-      durable materials, and results that stand the test of time.
+      Family owned and operated since 1996, we are committed to honest workmanship,
+      durable materials, and precision from concept to completion.
     </p>
   </div>
 </section>
 
-<div class="section-divider"></div>
-
 <!-- NEW BUILDS -->
-<section class="reveal">
-  <h2>NEW BUILDS</h2>
+<section>
+  <h2 class="section-title">NEW BUILDS</h2>
   <div class="gallery">
-    <div class="card" data-label="New Build"><img src="images/custom-home-exterior.jpg"></div>
-    <div class="card" data-label="New Build"><img src="images/custom-home-exterior2.jpg"></div>
-    <div class="card" data-label="New Build"><img src="images/fronthome.jpg"></div>
+    <div class="card"><img src="images/custom-home-exterior.jpg"></div>
+    <div class="card"><img src="images/custom-home-exterior2.jpg"></div>
+    <div class="card"><img src="images/custom-home-exterior3.jpg"></div>
+    <div class="card"><img src="images/frontdhome.jpg"></div>
+    <div class="card"><img src="images/modern-exterior-rear.jpg"></div>
   </div>
 </section>
 
 <!-- REMODELS -->
-<section class="reveal">
-  <h2>REMODELS</h2>
+<section class="alt">
+  <h2 class="section-title">REMODELS</h2>
   <div class="gallery">
-    <div class="card" data-label="Remodel"><img src="images/gallery.jpg"></div>
-    <div class="card" data-label="Remodel"><img src="images/modern-exterior-rear.jpg"></div>
-  </div>
-</section>
-
-<!-- KITCHENS -->
-<section class="reveal">
-  <h2>KITCHENS</h2>
-  <div class="gallery">
-    <div class="card" data-label="Kitchen"><img src="images/kitchen.jpg"></div>
-  </div>
-</section>
-
-<!-- BATHROOMS -->
-<section class="reveal">
-  <h2>BATHROOMS</h2>
-  <div class="gallery">
-    <div class="card" data-label="Bathroom"><img src="images/bathroom.jpg"></div>
-    <div class="card" data-label="Bathroom"><img src="images/bathroom2.jpg"></div>
+    <div class="card"><img src="images/galle.jpg"></div>
+    <div class="card"><img src="images/some.jpg"></div>
+    <div class="card"><img src="images/fireplace.jpg"></div>
   </div>
 </section>
 
 <!-- DECKS -->
-<section class="reveal">
-  <h2>DECKS</h2>
+<section>
+  <h2 class="section-title">DECKS</h2>
   <div class="gallery">
-    <div class="card" data-label="Deck"><img src="images/deck.jpg"></div>
-    <div class="card" data-label="Deck"><img src="images/deck2.jpg"></div>
-    <div class="card" data-label="Deck"><img src="images/deck3.jpg"></div>
+    <div class="card"><img src="images/deck.jpg"></div>
+    <div class="card"><img src="images/deck2.jpg"></div>
+    <div class="card"><img src="images/deck3.jpg"></div>
   </div>
 </section>
 
 <!-- GARAGES & BARNS -->
-<section class="reveal">
-  <h2>GARAGES & BARNS</h2>
+<section class="alt">
+  <h2 class="section-title">GARAGES & BARNS</h2>
   <div class="gallery">
-    <div class="card" data-label="Garage & Barn"><img src="images/crane.jpg"></div>
+    <div class="card"><img src="images/crane.jpg"></div>
+    <div class="card"><img src="images/custom-home-exterior7.jpg"></div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <div class="contact">
   <h2>CONTACT</h2>
-  <p>Ready to start your project?</p>
-  <button onclick="location.href='mailto:youremail@example.com'">Request a Quote</button>
+  <p>Ready to get started? Let’s talk about your project.</p>
+  <button onclick="location.href='mailto:youremail@example.com'">
+    Request a Quote
+  </button>
 </div>
 
 <footer>
   © 1996–2026 S.A.W. Construction Contracting, LLC
 </footer>
-
-<!-- REVEAL SCRIPT -->
-<script>
-const reveals=document.querySelectorAll('.reveal');
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting)e.target.classList.add('active');
-  });
-},{threshold:.15});
-reveals.forEach(r=>obs.observe(r));
-</script>
 
 </body>
 </html>
