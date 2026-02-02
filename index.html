@@ -1,236 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>S.A.W. Construction Contracting, LLC</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S.A.W. Construction Contracting, LLC</title>
 
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --blue: #1f3a5f;
-      --light-blue: #2e5c8a;
-      --off-white: #f5f7fa;
-      --text-dark: #1a1a1a;
-    }
+<style>
+:root{
+  --blue:#1f3a5f;
+  --blue-soft:#2e5c8a;
+  --light:#f4f7fb;
+  --dark:#111827;
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+*{box-sizing:border-box;margin:0;padding:0;}
 
-    body {
-      font-family: 'Inter', sans-serif;
-      color: var(--text-dark);
-      background: linear-gradient(180deg, var(--blue) 0%, var(--off-white) 70%);
-    }
+body{
+  font-family:'Inter',sans-serif;
+  color:var(--dark);
+  background:var(--light);
+  overflow-x:hidden;
+}
 
-    /* HERO */
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      padding: 2rem;
-    }
+/* ================= HERO ================= */
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:3rem 1.5rem;
+  color:white;
+  background:
+    linear-gradient(rgba(31,58,95,.75),rgba(31,58,95,.85)),
+    url("images/custom-home-exterior.jpg") center/cover fixed;
+}
 
-    .hero img {
-      max-width: 180px;
-      margin-bottom: 2rem;
-    }
+.hero img{
+  width:180px;
+  margin-bottom:2rem;
+}
 
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      letter-spacing: 0.15em;
-      margin-bottom: 1rem;
-    }
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.4rem,4vw,3.2rem);
+  letter-spacing:.18em;
+}
 
-    .hero p {
-      max-width: 700px;
-      font-size: 1.1rem;
-      opacity: 0.9;
-    }
+.hero p{
+  max-width:720px;
+  margin-top:1.2rem;
+  font-size:1.1rem;
+  opacity:.95;
+}
 
-    /* SECTION BASE */
-    section {
-      padding: 4rem 6%;
-      background: var(--off-white);
-    }
+/* ================= SECTIONS ================= */
+section{
+  padding:5rem 6%;
+  position:relative;
+}
 
-    section.dark {
-      background: linear-gradient(180deg, #e9eef5, #ffffff);
-    }
+@media(max-width:768px){
+  section{padding:4rem 6%;}
+}
 
-    h2 {
-      font-family: 'Playfair Display', serif;
-      text-align: center;
-      font-size: 2.2rem;
-      margin-bottom: 2.5rem;
-      letter-spacing: 0.1em;
-      color: var(--blue);
-    }
+h2{
+  font-family:'Playfair Display',serif;
+  text-align:center;
+  font-size:2.2rem;
+  letter-spacing:.12em;
+  color:var(--blue);
+  margin-bottom:3rem;
+}
 
-    /* GALLERY */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-    }
+/* divider */
+.section-divider{
+  height:70px;
+  background:linear-gradient(180deg,var(--light),#e6ecf5);
+}
 
-    .gallery img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+/* ================= ABOUT ================= */
+.about{
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+  line-height:1.8;
+  font-size:1.05rem;
+}
 
-    .gallery img:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.25);
-    }
+/* ================= GALLERY ================= */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:2.2rem;
+}
 
-    /* ABOUT */
-    .about {
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: #333;
-    }
+/* image card */
+.card{
+  position:relative;
+  overflow:hidden;
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
 
-    /* CONTACT */
-    .contact {
-      text-align: center;
-      padding: 5rem 6%;
-      background: var(--light-blue);
-      color: white;
-    }
+.card img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  transition:transform .6s ease;
+}
 
-    .contact button {
-      margin-top: 2rem;
-      padding: 0.9rem 2.2rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      background: white;
-      color: var(--blue);
-      font-weight: 600;
-    }
+.card::after{
+  content:attr(data-label);
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(to top,rgba(0,0,0,.65),rgba(0,0,0,.15));
+  color:white;
+  font-family:'Playfair Display',serif;
+  font-size:1.4rem;
+  letter-spacing:.08em;
+  opacity:0;
+  transition:.4s;
+}
 
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      background: #0f243d;
-      color: #cfd8e3;
-      font-size: 0.9rem;
-    }
-  </style>
+.card:hover img{transform:scale(1.08);}
+.card:hover::after{opacity:1;}
+
+/* ================= CONTACT ================= */
+.contact{
+  background:linear-gradient(135deg,var(--blue),var(--blue-soft));
+  color:white;
+  text-align:center;
+  padding:5rem 6%;
+}
+
+.contact button{
+  margin-top:2rem;
+  padding:.9rem 2.4rem;
+  font-size:1rem;
+  font-weight:600;
+  border:none;
+  border-radius:6px;
+  background:white;
+  color:var(--blue);
+  cursor:pointer;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#0f243d;
+  color:#cfd8e3;
+  text-align:center;
+  padding:1.5rem;
+  font-size:.9rem;
+}
+
+/* ================= REVEAL ================= */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:.8s ease;
+}
+.reveal.active{
+  opacity:1;
+  transform:none;
+}
+</style>
 </head>
+
 <body>
 
-  <!-- HERO -->
-  <div class="hero">
-    <img src="images/companylogo.jpg" alt="S.A.W. Construction Logo">
-    <h1>BUILDING WITH INTEGRITY</h1>
+<!-- HERO -->
+<div class="hero">
+  <img src="images/companylogo.jpg" alt="S.A.W. Construction Logo">
+  <h1>BUILDING WITH INTEGRITY</h1>
+  <p>
+    Custom homes, remodels, decks, garages, and barns —
+    family-owned craftsmanship built to last.
+  </p>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ABOUT -->
+<section class="reveal">
+  <h2>ABOUT</h2>
+  <div class="about">
     <p>
-      Custom homes, additions, garages and barns, decks, and full-scale remodeling —
-      proudly family-owned and operated since 1996.
+      <strong>S.A.W. Construction Contracting, LLC</strong> provides high-quality
+      new construction, remodeling, kitchens, bathrooms, decks, garages, and barns.
+    </p>
+    <p>
+      Family owned and operated since 1996, we focus on honest workmanship,
+      durable materials, and results that stand the test of time.
     </p>
   </div>
+</section>
 
-  <!-- ABOUT -->
-  <section class="dark">
-    <h2>ABOUT</h2>
-    <div class="about">
-      <p>
-        <strong>S.A.W. Construction Contracting, LLC</strong> specializes in new construction,
-        remodeling, kitchens, bathrooms, decks, garages, and barns.
-      </p>
-      <p>
-        Family owned and operated since 1996, we are committed to honest workmanship,
-        durable materials, and attention to detail from concept to completion.
-      </p>
-    </div>
-  </section>
+<div class="section-divider"></div>
 
-  <!-- NEW BUILDS -->
-  <section>
-    <h2>NEW BUILDS</h2>
-    <div class="gallery">
-      <img src="images/custom-home-exterior.jpg">
-      <img src="images/custom-home-exterior2.jpg">
-      <img src="images/frontdhome.jpg">
-    </div>
-  </section>
-
-  <!-- REMODELS -->
-  <section class="dark">
-    <h2>REMODELS</h2>
-    <div class="gallery">
-      <img src="images/gallery.jpg">
-      <img src="images/gallery-jpg">
-      <img src="images/modern-exterior-rear.jpg">
-    </div>
-  </section>
-
-  <!-- KITCHENS -->
-  <section>
-    <h2>KITCHENS</h2>
-    <div class="gallery">
-      <img src="images/kitchen.jpg">
-    </div>
-  </section>
-
-  <!-- BATHROOMS -->
-  <section class="dark">
-    <h2>BATHROOMS</h2>
-    <div class="gallery">
-      <img src="images/bathroom.jpg">
-      <img src="images/bathroom2.jpg">
-    </div>
-  </section>
-
-  <!-- DECKS -->
-  <section>
-    <h2>DECKS</h2>
-    <div class="gallery">
-      <img src="images/deck.jpg">
-      <img src="images/deck2.jpg">
-      <img src="images/deck3.jpg">
-    </div>
-  </section>
-
-  <!-- GARAGES & BARNS -->
-  <section class="dark">
-    <h2>GARAGES & BARNS</h2>
-    <div class="gallery">
-      <img src="images/crane.jpg">
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <div class="contact">
-    <h2>CONTACT</h2>
-    <p>Ready to get started? Let’s talk about your project.</p>
-    <button onclick="location.href='mailto:youremail@example.com'">Request a Quote</button>
+<!-- NEW BUILDS -->
+<section class="reveal">
+  <h2>NEW BUILDS</h2>
+  <div class="gallery">
+    <div class="card" data-label="New Build"><img src="images/custom-home-exterior.jpg"></div>
+    <div class="card" data-label="New Build"><img src="images/custom-home-exterior2.jpg"></div>
+    <div class="card" data-label="New Build"><img src="images/fronthome.jpg"></div>
   </div>
+</section>
 
-  <footer>
-    © 1996–2026 S.A.W. Construction Contracting, LLC
-  </footer>
+<!-- REMODELS -->
+<section class="reveal">
+  <h2>REMODELS</h2>
+  <div class="gallery">
+    <div class="card" data-label="Remodel"><img src="images/gallery.jpg"></div>
+    <div class="card" data-label="Remodel"><img src="images/modern-exterior-rear.jpg"></div>
+  </div>
+</section>
+
+<!-- KITCHENS -->
+<section class="reveal">
+  <h2>KITCHENS</h2>
+  <div class="gallery">
+    <div class="card" data-label="Kitchen"><img src="images/kitchen.jpg"></div>
+  </div>
+</section>
+
+<!-- BATHROOMS -->
+<section class="reveal">
+  <h2>BATHROOMS</h2>
+  <div class="gallery">
+    <div class="card" data-label="Bathroom"><img src="images/bathroom.jpg"></div>
+    <div class="card" data-label="Bathroom"><img src="images/bathroom2.jpg"></div>
+  </div>
+</section>
+
+<!-- DECKS -->
+<section class="reveal">
+  <h2>DECKS</h2>
+  <div class="gallery">
+    <div class="card" data-label="Deck"><img src="images/deck.jpg"></div>
+    <div class="card" data-label="Deck"><img src="images/deck2.jpg"></div>
+    <div class="card" data-label="Deck"><img src="images/deck3.jpg"></div>
+  </div>
+</section>
+
+<!-- GARAGES & BARNS -->
+<section class="reveal">
+  <h2>GARAGES & BARNS</h2>
+  <div class="gallery">
+    <div class="card" data-label="Garage & Barn"><img src="images/crane.jpg"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact">
+  <h2>CONTACT</h2>
+  <p>Ready to start your project?</p>
+  <button onclick="location.href='mailto:youremail@example.com'">Request a Quote</button>
+</div>
+
+<footer>
+  © 1996–2026 S.A.W. Construction Contracting, LLC
+</footer>
+
+<!-- REVEAL SCRIPT -->
+<script>
+const reveals=document.querySelectorAll('.reveal');
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting)e.target.classList.add('active');
+  });
+},{threshold:.15});
+reveals.forEach(r=>obs.observe(r));
+</script>
 
 </body>
 </html>
