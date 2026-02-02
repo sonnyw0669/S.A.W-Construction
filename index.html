@@ -5,77 +5,72 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>S.A.W. Construction Contracting, LLC</title>
 
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --sky-blue: #6faedc;
-  --sky-blue-dark: #4f8fbe;
-  --steel-text: #2b2f33;
+  --sky: #6fb6e6;
+  --sky-dark: #4a97cc;
+  --steel: #2b2f33;
   --white: #ffffff;
 }
 
-/* RESET */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   font-family: 'Montserrat', sans-serif;
+  color: var(--steel);
   background: white;
-  color: var(--steel-text);
-  line-height: 1.65;
+  line-height: 1.6;
 }
 
 /* HERO */
 .hero {
-  background: var(--sky-blue);
+  background: linear-gradient(180deg, var(--sky), var(--sky-dark));
   padding: 3rem 1.5rem 2.5rem;
-  text-align: center;
 }
 
-.hero-logo-wrap {
+.hero-inner {
   background: white;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
-  padding: 2.5rem 1.5rem 2rem;
-  border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  padding: 2.5rem 1.5rem;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
-.hero-logo-wrap img {
-  width: 75%;
+.hero-inner img {
+  width: 70%;
   max-width: 420px;
-  height: auto;
-  object-fit: contain;
   margin-bottom: 1.5rem;
 }
 
-.hero-logo-wrap h1 {
+.hero-inner h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 2.4rem;
-  letter-spacing: 0.12em;
+  font-size: 2.3rem;
+  letter-spacing: 0.14em;
   margin-bottom: 0.8rem;
 }
 
-.hero-logo-wrap p {
-  max-width: 720px;
-  margin: auto;
-  font-size: 1.05rem;
+.hero-inner p {
   font-weight: 500;
+  max-width: 760px;
+  margin: auto;
 }
 
 /* SECTIONS */
 section {
-  padding: 4rem 6%;
+  padding: 4.5rem 6%;
 }
 
 .section-title {
   font-family: 'Playfair Display', serif;
+  font-size: 2.1rem;
+  letter-spacing: 0.18em;
   text-align: center;
-  font-size: 2rem;
-  letter-spacing: 0.15em;
   margin-bottom: 3rem;
 }
 
@@ -96,11 +91,9 @@ section {
 }
 
 .card {
-  position: relative;
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
-  background: #ddd;
+  box-shadow: 0 14px 32px rgba(0,0,0,0.18);
 }
 
 .card img {
@@ -108,22 +101,21 @@ section {
   height: 260px;
   object-fit: cover;
   object-position: center;
-  filter: contrast(1.05) saturate(1.05) sharpen(0.5);
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
-/* SPECIAL IMAGE FIXES */
-.card.crane img {
+/* FIXES */
+.crane img {
   object-position: center top;
 }
 
-.card.soft img {
+.soft img {
   transform: scale(1.08);
 }
 
 /* CONTACT */
 .contact {
-  background: var(--sky-blue-dark);
+  background: var(--sky-dark);
   color: white;
   text-align: center;
   padding: 4.5rem 1.5rem;
@@ -132,12 +124,9 @@ section {
 .contact button {
   margin-top: 2rem;
   padding: 0.9rem 2.4rem;
-  font-size: 1rem;
-  font-weight: 600;
   border-radius: 6px;
   border: none;
-  background: white;
-  color: var(--steel-text);
+  font-weight: 600;
   cursor: pointer;
 }
 
@@ -146,18 +135,24 @@ footer {
   background: #e9eef3;
   text-align: center;
   padding: 1.5rem;
-  font-size: 0.9rem;
+}
+
+/* ANIMATIONS */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
-  .hero-logo-wrap img {
-    width: 90%;
-  }
-
-  section {
-    padding: 3rem 1.5rem;
-  }
+  section { padding: 3rem 1.5rem; }
+  .hero-inner img { width: 90%; }
 }
 </style>
 </head>
@@ -165,44 +160,46 @@ footer {
 <body>
 
 <header class="hero">
-  <div class="hero-logo-wrap">
-    <img src="images/companylogo.jpg" alt="S.A.W. Construction Logo">
+  <div class="hero-inner reveal">
+    <img src="images/companylogo.jpg">
     <h1>BUILDING WITH INTEGRITY</h1>
-    <p>
-      Custom homes, remodeling, decks, garages, and barns — proudly family-owned and operated since 1996.
-    </p>
+    <p>Custom homes, remodeling, decks, garages, and barns — proudly serving families since 1996.</p>
   </div>
 </header>
 
-<section>
+<section class="reveal">
   <h2 class="section-title">ABOUT</h2>
   <div class="about">
-    <p><strong>S.A.W. Construction Contracting, LLC</strong> specializes in new construction, remodeling,
-    kitchens, bathrooms, decks, garages, and barns.</p>
-    <p>Family owned and operated since 1996, we focus on honest craftsmanship, durable materials,
-    and precision from start to finish.</p>
+    <p><strong>S.A.W. Construction Contracting, LLC</strong> delivers honest craftsmanship,
+    durable materials, and pride-driven work from concept to completion.</p>
   </div>
 </section>
 
-<section>
+<section class="reveal">
   <h2 class="section-title">NEW BUILDS</h2>
   <div class="gallery">
     <div class="card"><img src="images/custom-home-exterior.jpg"></div>
     <div class="card"><img src="images/custom-home-exterior2.jpg"></div>
-    <div class="card"><img src="images/custom-home-exterior3.jpg"></div>
+    <div class="card"><img src="images/crane.jpg"></div>
   </div>
 </section>
 
-<section>
-  <h2 class="section-title">REMODELS</h2>
+<section class="reveal">
+  <h2 class="section-title">CRAFTED TRANSFORMATIONS</h2>
   <div class="gallery">
     <div class="card soft"><img src="images/galle.jpg"></div>
     <div class="card soft"><img src="images/some.jpg"></div>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2 class="section-title">FIREPLACES</h2>
+  <div class="gallery">
     <div class="card"><img src="images/fireplace.jpg"></div>
   </div>
 </section>
 
-<section>
+<section class="reveal">
   <h2 class="section-title">DECKS</h2>
   <div class="gallery">
     <div class="card"><img src="images/deck.jpg"></div>
@@ -211,23 +208,34 @@ footer {
   </div>
 </section>
 
-<section>
+<section class="reveal">
   <h2 class="section-title">GARAGES & BARNS</h2>
   <div class="gallery">
-    <div class="card crane"><img src="images/crane.jpg"></div>
     <div class="card"><img src="images/custom-home-exterior7.jpg"></div>
+    <div class="card"><img src="images/custom-home-exterior3.jpg"></div>
   </div>
 </section>
 
-<div class="contact">
+<div class="contact reveal">
   <h2>CONTACT</h2>
-  <p>Ready to get started? Let’s talk about your project.</p>
+  <p>Let’s build something you’ll be proud of.</p>
   <button onclick="location.href='mailto:youremail@example.com'">Request a Quote</button>
 </div>
 
 <footer>
   © 1996–2026 S.A.W. Construction Contracting, LLC
 </footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('active');
+  });
+}, { threshold: 0.15 });
+
+reveals.forEach(r => observer.observe(r));
+</script>
 
 </body>
 </html>
